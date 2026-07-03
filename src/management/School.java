@@ -28,6 +28,22 @@ public class School {
         this.principal = principal;
     }
 
+    public boolean isSchoolFull(){
+        int counter = 0;
+        for(int i=0;i<classrooms.length;i++){
+            if(classrooms[i].isClassroomFull()){
+                counter++;
+            }
+        }
+
+        if(counter==classrooms.length){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     public void displayAllSchoolInfo(){
         System.out.println("\n=== SCHOOL: " + schoolName.toUpperCase() + " ===");
 

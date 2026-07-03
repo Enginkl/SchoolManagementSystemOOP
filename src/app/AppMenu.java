@@ -1,5 +1,6 @@
 package app;
 
+import com.sun.tools.jconsole.JConsoleContext;
 import models.Branch;
 import models.Principal;
 import models.Student;
@@ -89,6 +90,12 @@ public class AppMenu {
             scanner.nextLine();
 
             if(choice == 1){
+
+                if(school.isSchoolFull()){
+                    System.out.println("Error: The school is completely full! No more students can be added.");
+                    continue;
+                }
+
                 System.out.print("Enter Student ID: ");
                 String id =  scanner.nextLine();
                 System.out.print("Enter Student Name: ");
